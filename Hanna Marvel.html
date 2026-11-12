@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanna | Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+      
+body {
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fff0f5 35%,
+        #f8dce8 65%,
+        #fcebf2 100%
+    );
+
+    color: #65483f;
+    font-family: Georgia, serif;
+    line-height: 1.7;
+
+    background-attachment: fixed;
+
+    background-image:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.95),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 192, 203, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 255, 255, 0.8),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f5,
+            #f8dce8,
+            #fcebf2
+        );
+}
+
+      
+nav {
+    background: #c95f8b;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: sticky;
+    top: 10px;
+    z-index: 20;
+    max-width: 850px;
+    margin: 15px auto;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(120, 55, 83, 0.15);
+}
+
+nav a {
+    color: #fffafc;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 9px 18px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav a:hover {
+    background: #fff0f5;
+    color: #c95f8b;
+    text-decoration: none;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    max-width: 1100px;
+    margin: 30px auto 22px;
+    padding: 38px 42px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+
+    background: linear-gradient(
+        135deg,
+        #f8b8d0 0%,
+        #e98bb8 35%,
+        #d66ba5 65%,
+        #f4a9d0 100%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 22px;
+    color: white;
+    
+   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+header h1 {
+    color: #65483f;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    margin-bottom: 12px;
+    text-shadow: 0 3px 12px rgba(130, 45, 95, 0.2);
+    
+}
+
+header p {
+    color: #fff5fa;
+    margin-bottom: 7px;
+}
+
+
+        
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 25px auto 40px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            align-items: start;
+            
+            
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.86);
+            padding: 25px;
+            margin: 0;
+            border: 1px solid #edcbd8;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(89, 61, 53, 0.06);
+            scroll-margin-top: 85px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #java {
+            grid-column: 1 / -1;
+        }
+
+        h2 {
+            color: #9b6260;
+            border-bottom: 1px solid #e7c1bd;
+            padding-bottom: 9px;
+            margin-bottom: 20px;
+        }
+
+        h2::after {
+            content: "";
+        }
+
+        h3 {
+            color: #81574d;
+            margin: 18px 0 8px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .detail {
+            background-color: #fff3f7;
+            padding: 11px 14px;
+            border-left: 3px solid #d88eaa;
+            border-radius: 7px;
+            margin: 9px 0;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .education-item, .skill {
+            background-color: #fff3f7;
+            padding: 15px 18px;
+            margin: 12px 0;
+            border-left: 4px solid #d88eaa;
+            border-radius: 8px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .code-container {
+            background-color: #3d2b28;
+            color: #ffe9df;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+        }
+
+        .note {
+            background: #f7e3e0;
+            border-left: 4px solid #b9787c;
+            padding: 13px 16px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #c95f8b;
+            color: #fff8fb;
+            padding: 22px 15px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                padding: 13px 10px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            header {
+                width: 92%;
+                margin: 18px auto;
+                padding: 25px 20px;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-photo {
+                width: 170px;
+                min-width: 170px;
+                height: 190px;
+            }
+
+            main {
+                width: 92%;
+                display: block;
+            }
+
+            section {
+                margin-bottom: 18px;
+                padding: 21px 18px;
+            }
+
+            #java {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#personal">ABOUT ME</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#java">JAVA CODE</a>
+</nav>
+
+<header>
+    <div class="hero-text">
+        <h1>Hanna Jhoy<br>G. Marvel</h1>
+        <p>BSIT Student | Aspiring UI/UX Designer</p>
+        <p>I enjoy creativity, graphic design, and learning about technology.</p>
+</header>
+
+<main>
+
+    <!-- PERSONAL INFORMATION -->
+    <section id="personal">
+        <h2>Personal Information</h2>
+
+        <h3>About Me</h3>
+        <p>
+            Hi! I'm Hanna, an Information Technology student who enjoys
+            creativity, technology, and graphic design. I am currently
+            learning HTML, CSS, and Java to improve my skills in web
+            development and programming. In the future, I want to become
+            a UI/UX designer and create websites and applications that
+            are both useful and easy to use.
+        </p>
+
+        <h3>Personal Details</h3>
+        <div class="detail"><strong>Full Name:</strong> Hanna Jhoy G. Marvel</div>
+        <div class="detail"><strong>Course:</strong> Bachelor of Science in Information Technology</div>
+        <div class="detail"><strong>Section:</strong> BSIT-1B</div>
+        <div class="detail"><strong>Contact Number:</strong> 09242133975</div>
+        <div class="detail"><strong>Email:</strong> marvelhannajhoygarcia@gmail.com</div>
+    </section>
+
+    <!-- EDUCATIONAL BACKGROUND -->
+    <section id="education">
+        <h2>Educational Background</h2>
+
+        <div class="education-item">
+            <h3>College</h3>
+            <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+            <p>Course: Bachelor of Science in Information Technology</p>
+            <p>Status: Currently Studying</p>
+        </div>
+
+        <div class="education-item">
+            <h3>Senior High School</h3>
+            <p>Eduardo L. Joson Memorial High School.</p>
+            <p>Strand: ICT.</p>
+        </div>
+
+        <div class="education-item">
+            <h3>Junior High School</h3>
+            <p>Eduardo L. Joson Memorial High School.</p>
+        </div>
+
+        <div class="education-item">
+            <h3>Elementary</h3>
+            <p>Casanova Elementary School.</p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill">
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>HTML - Basic Web Development</li>
+                <li>CSS - Basic Website Styling</li>
+                <li>Java - Basic Programming</li>
+                <li>Graphic Design</li>
+                <li>Microsoft Word, PowerPoint and Exel</li>
+            </ul>
+        </div>
+
+        <div class="skill">
+            <h3>Personal Skills</h3>
+            <ul>
+                <li>Creativity</li>
+                <li>Organization</li>
+                <li>Willingness to Learn</li>
+                <li>Teamwork</li>
+                <li>Problem Solving</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- JAVA CODE -->
+    <section id="java">
+        <h2>Java Code</h2>
+
+        <h3>Final Examination Ranking</h3>
+        <p>
+            This Java program collects the examination scores of 15 students.
+            It checks that each score is between 0 and 100, calculates the
+            average score, counts how many students passed, and sorts the
+            scores from highest to lowest. It also displays the highest and
+            lowest scores.
+        </p>
+
+        <h3>Source Code</h3>
+        <div class="code-container">
+<pre><code>// Ginagamit ito para makakuha ng input mula sa user
+import java.util.Scanner;
+
+// Pangalan ng buong program
+public class FinalExaminationRanking {
+
+    // Dito nagsisimula ang program
+    public static void main(String[] args) {
+
+        // Para makapag-input ng score ang user
+        Scanner input = new Scanner(System.in);
+
+        // Array na lalagyan ng scores ng 15 estudyante
+        int[] scores = new int[15];
+
+        // Lalagyan ng kabuuang score
+        int total = 0;
+
+        // Nagbibilang ng mga estudyanteng pumasa
+        int passed = 0;
+
+
+        // Uulit ito para makuha ulit ang scores ng 15 student
+        for (int i = 0; i < 15; i++) {
+
+            // Humihingi ng score sa bawat estudyante
+            System.out.print("Enter the score: " + (i + 1) + ": ");
+
+            // taga save ng score sa array
+            scores[i] = input.nextInt();
+
+            // Taga tingin kung ang score ay mas mababa sa 0 o mas mataas sa 100
+            while (scores[i] < 0 || scores[i] > 100) {
+
+                // Hihingi ulit ng score kapag invalid ang inilagay
+                System.out.print("Invalid score. Enter between 0-100 only: ");
+
+                // Tatanggap ng bagong score
+                scores[i] = input.nextInt();
+            }
+
+            // taga score sa total
+            total = total + scores[i];
+
+            // Titingnan kung ang score ay 75 pataas
+            if (scores[i] >= 75) {
+
+                // Dadagdagan ng isa ang bilang ng mga pumasa
+                passed++;
+            }
+        }
+
+
+        // kumukuha ang average sa pamamagitan ng paghati ng total sa 15
+        double average = (double) total / 15;
+
+
+        // Simula ng pag-aayos ng scores mula pinakamataas hanggang pinakamababa
+        for (int i = 0; i < 14; i++) {
+
+            // taga compare ng magkatabing scores
+            for (int j = 0; j < 14 - i; j++) {
+
+                // Titingnan kung mas mababa ang score sa kaliwa
+                if (scores[j] < scores[j + 1]) {
+
+                    // Pansamantalang itatago ang score sa temp
+                    int temp = scores[j];
+
+                    // Ilalagay ang mas mataas na score sa kaliwa
+                    scores[j] = scores[j + 1];
+
+                    // taga lagay ng dating score sa kanan
+                    scores[j + 1] = temp;
+                }
+            }
+        }
+
+
+        // nagpapakita ng title ng result
+        System.out.println("\nFinal Examination Ranking");
+
+        // Ipapakita ang average na may dalawang decimal places
+        System.out.printf("Average Score: %.2f\n", average);
+
+        // Ipapakita kung ilan ang pumasa
+        System.out.println("Students Passed: " + passed);
+
+        // Ipapakita ang pinakamataas na score
+        System.out.println("Highest Score: " + scores[0]);
+
+        // Ipapakita ang pinakamababang score
+        System.out.println("Lowest Score: " + scores[14]);
+
+
+        // Ipapakita ang pamagat ng listahan ng scores
+        System.out.println("\nSorted Scores:");
+
+        // Uulit para maipakita ang lahat ng 15 scores
+        for (int i = 0; i < 15; i++) {
+
+            // Ipapakita ang index at score ng bawat estudyante
+            System.out.println("Index " + i + ": " + scores[i]);
+        }
+
+        // end ng code para di mag tuloy
+        input.close();
+    }
+}
+
+</code></pre>
+        </div>
+
+        <h3>Java Concepts Used</h3>
+        <ul>
+            <li>Scanner for user input</li>
+            <li>One-Dimensional Array</li>
+            <li>For Loop</li>
+            <li>Nested For Loops</li>
+            <li>While Loop for Input Validation</li>
+            <li>If Statement</li>
+            <li>Arithmetic Operations</li>
+            <li>Bubble Sort / Swapping Values</li>
+        </ul>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Hanna Jhoy G. Marvel</p>
+    <p>BSIT Student | Personal Portfolio</p>
+</footer>
+
+</body>
+</html>
